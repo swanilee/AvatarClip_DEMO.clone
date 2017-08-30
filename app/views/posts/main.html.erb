@@ -1,0 +1,19 @@
+<h1>선경이의 사이트 입니다!</h1>
+<h3>자유롭게 글을 남겨주세요.</h3>
+
+
+ 
+ 1) <%= link_to '글쓰러가기', new_post_path %>  
+ 2) <%= link_to '게시판보러가기', posts_path %>
+  
+ 
+ <% if user_signed_in? %>
+ <%= link_to '3) 로그아웃', destroy_user_session_path, method: 'delete' %>
+ <% else %>
+ <%= link_to '3) 로그인', new_user_session_path %>
+ <%= link_to '4) 회원가입', new_user_registration_path %>
+  
+ 
+ <% end %>
+
+ 

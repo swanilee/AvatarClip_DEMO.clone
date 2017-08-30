@@ -1,0 +1,15 @@
+<% @posts.each do |post| %>
+  <div>
+    <%= post.id %> )
+    <%= post.title %> 
+    <%= post.content %>
+    <%= link_to '[이 글보기', post_path(post.id) %>    <!--"/posts/#{post.id}"-->
+    <%= link_to '/수정하기', edit_post_path(post.id) %> <!--"/posts/#{post.id}/edit"--> 
+    <%= link_to '/삭제하기]', post_path(post.id), method: 'delete', data: {confirm: "정말 삭제하시겠습니까?"} %>
+     <!--"/posts/#{post.id}"-->
+   </div>
+    <% end %>
+    <p>
+        <%= link_to '새 글쓰기', "/posts/new" %>
+    </p>
+    <%= paginate @posts %>
